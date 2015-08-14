@@ -1,0 +1,43 @@
+<html lang="en" ng-app="StarterApp">
+    <head>
+        <link rel="stylesheet" href="/vendors/angular-material/angular-material.min.css">
+        <link rel="stylesheet" href="/assets/style/style.css">
+    </head>
+
+    <body layout="column" ng-controller="AppCtrl">
+
+
+        <md-toolbar layout="row">
+            <h1>Another toolbar</h1>
+        </md-toolbar>
+
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-button class="md-raised md-primary">Button</md-button>
+        </section>
+
+        <div layout="row" flex>
+            <div layout="column" flex id="content">
+                <md-content layout="column" flex class="md-padding">
+                    <md-button class="md-primary" ng-click="showDialog($event)">Launch Dialog</md-button>
+                </md-content>
+            </div>
+        </div>
+
+        <div layout="row" flex>
+            <div layout="column" flex id="contentTwo">
+                <md-content layout="column" flex class="md-padding">
+                    <md-button class="md-primary" ng-click="showAnotherDialog($event)">Here is another Dialog</md-button>
+                </md-content>
+            </div>
+        </div>
+
+    <!-- Angular Material Dependencies -->
+    <script type="text/javascript" src="/vendors/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-aria/angular-aria.min.js"></script>
+
+    <script type="text/javascript" src="/vendors/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="/assets/scripts/app.min.js"></script>
+
+    </body>
+</html>
