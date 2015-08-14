@@ -4,36 +4,86 @@
         <link rel="stylesheet" href="/assets/style/style.css">
     </head>
 
-    <body layout="column" ng-controller="AppCtrl">
+    <body>
 
+        <div layout="column" ng-controller="AppCtrl">
+            <md-toolbar layout="row">
+                <h1>Another toolbar</h1>
+            </md-toolbar>
 
-        <md-toolbar layout="row">
-            <h1>Another toolbar</h1>
-        </md-toolbar>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button class="md-raised md-primary">Button</md-button>
+            </section>
 
-        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-            <md-button class="md-raised md-primary">Button</md-button>
-        </section>
-
-        <div layout="row" flex>
-            <div layout="column" flex id="content">
-                <md-content layout="column" flex class="md-padding">
-                    <md-button class="md-primary" ng-click="showDialog($event)">Launch Dialog</md-button>
-                </md-content>
+            <div layout="row" flex>
+                <div layout="column" flex id="content">
+                    <md-content layout="column" flex class="md-padding">
+                        <md-button class="md-primary" ng-click="showDialog($event)">Launch Dialog</md-button>
+                    </md-content>
+                </div>
             </div>
-        </div>
 
-        <div layout="row" flex>
-            <div layout="column" flex id="contentTwo">
-                <md-content layout="column" flex class="md-padding">
-                    <md-button class="md-primary" ng-click="showAnotherDialog($event)">Here is another Dialog</md-button>
-                </md-content>
-            </div>
+            <!--DIVIDER-->
+            <md-divider></md-divider>
+            <!--<md-divider md-inset></md-divider>-->
+
+
+            <!--FAB BUTTON-->
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button class="md-fab md-accent" aria-label="Play">
+                    <md-tooltip>
+                        Awesome Tooltip is Awesome
+                    </md-tooltip>
+                    <md-icon icon="img/icons/ic_play_arrow_24px.svg"></md-icon>
+                </md-button>
+            </section>
+
+
+        <!--FORM-->
+
+        <md-divider></md-divider>
+
+        <div ng-controller="AppCtrl" layout="column">
+            <md-toolbar class="md-primary">
+                <h1 class="md-toolbar-tools">
+                    Top Secret Project
+                </h1>
+            </md-toolbar>
+            <md-content layout-padding>
+                <form name="projectForm">
+                    <md-input-container>
+                        <label>Project Name</label>
+                        <input md-maxlength="30" required name="description" ng-model="project.description">
+                        <div ng-messages="projectForm.description.$error">
+                            <div ng-message="required">This is required.</div>
+                            <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Client Name</label>
+                        <input required name="clientName" ng-model="project.clientName">
+                        <div ng-messages="projectForm.clientName.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Hourly Rate (USD)</label>
+                        <input required type="number" step="any" name="rate" ng-model="project.rate" min="800" max="4999">
+                        <div ng-messages="projectForm.rate.$error">
+                            <div ng-message="required">This is required.</div>
+                            <div ng-message="min">You should charge at least $800 an hour. This job is a big deal... if you mess up, everyone dies!</div>
+                            <div ng-message="max">$5,000 an hour? That's a little ridiculous. I doubt event Bill Clinton could afford that.</div>
+                        </div>
+                    </md-input-container>
+                </form>
+            </md-content>
         </div>
+            </div>
 
     <!-- Angular Material Dependencies -->
     <script type="text/javascript" src="/vendors/angular/angular.min.js"></script>
     <script type="text/javascript" src="/vendors/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-messages/angular-messages.min.js"></script>
     <script type="text/javascript" src="/vendors/angular-aria/angular-aria.min.js"></script>
 
     <script type="text/javascript" src="/vendors/angular-material/angular-material.min.js"></script>

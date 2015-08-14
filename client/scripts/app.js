@@ -1,11 +1,11 @@
-var app = angular.module('StarterApp', ['ngMaterial']);
+var app = angular.module('StarterApp', ['ngMaterial', 'ngMessages']);
 
 app.controller('AppCtrl', ['$scope', '$mdDialog', function($scope, $mdDialog){
     var alert;
     $scope.showDialog = function($event) {
         alert = $mdDialog.alert({
-            title: 'Attention',
-            content: 'This is an example of how easy dialogs can be!',
+            title: 'Awesome Popup',
+            content: 'MODAL!!!!!',
             ok: 'Close'
         });
 
@@ -15,18 +15,6 @@ app.controller('AppCtrl', ['$scope', '$mdDialog', function($scope, $mdDialog){
                 alert = undefined;
             });
     };
-
-    $scope.showAnotherDialog = function($event){
-        alert = $mdDialog.alert({
-            title: 'AnotherAttention',
-            content: 'Here is another example!',
-            ok: 'Close'
-        });
-
-        $mdDialog
-            .show(alert)
-            .finally(function(){
-                alert = undefined;
-            });
-    };
 }]);
+
+

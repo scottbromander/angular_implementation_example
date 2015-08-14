@@ -19,7 +19,8 @@ module.exports = function(grunt){
                     "angular-animate/angular-animate.min.js",
                     "angular-aria/angular-aria.min.js",
                     "angular-material/angular-material.min.js",
-                    "angular-material/angular-material.min.css"
+                    "angular-material/angular-material.min.css",
+                    "angular-messages/angular-messages.min.js"
                 ],
                 "dest": "server/public/vendors/"
             },
