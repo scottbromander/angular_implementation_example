@@ -2,18 +2,41 @@
     <head>
         <link rel="stylesheet" href="/vendors/angular-material/angular-material.min.css">
         <link rel="stylesheet" href="/assets/style/style.css">
+
+        <!-- Angular Material / Message Dependencies -->
+        <script type="text/javascript" src="/vendors/angular/angular.min.js"></script>
+        <script type="text/javascript" src="/vendors/angular-animate/angular-animate.min.js"></script>
+        <script type="text/javascript" src="/vendors/angular-messages/angular-messages.min.js"></script>
+        <script type="text/javascript" src="/vendors/angular-aria/angular-aria.min.js"></script>
+
+        <script type="text/javascript" src="/vendors/angular-material/angular-material.min.js"></script>
+        <script type="text/javascript" src="/assets/scripts/app.min.js"></script>
     </head>
 
     <body>
 
-        <div layout="column" ng-controller="AppCtrl">
-            <md-toolbar layout="row">
-                <h1>Another toolbar</h1>
-            </md-toolbar>
+        <div layout="column" ng-cloak="" ng-controller="AppCtrl">
+            <md-content>
+
+                <md-toolbar layout="row" class="md-tall md-accent docix-header">
+
+                    <h1 class="md-toolbar-tools ">Docix.net</h1>
+
+                </md-toolbar>
+            </md-content>
+
 
             <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                <md-button class="md-raised md-primary">Button</md-button>
+                <md-button class="md-raised md-primary md-secondary" ng-click="updateClicks()">Button</md-button>
             </section>
+
+            <md-divider></md-divider>
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <p>{{clicks}}</p>
+            </section>
+
+            <md-divider></md-divider>
 
             <div layout="row" flex>
                 <div layout="column" flex id="content">
@@ -39,11 +62,11 @@
             </section>
 
 
-        <!--FORM-->
+            <!--FORM-->
 
-        <md-divider></md-divider>
+            <md-divider></md-divider>
 
-        <div ng-controller="AppCtrl" layout="column">
+
             <md-toolbar class="md-primary">
                 <h1 class="md-toolbar-tools">
                     Top Secret Project
@@ -78,16 +101,9 @@
                 </form>
             </md-content>
         </div>
-            </div>
 
-    <!-- Angular Material Dependencies -->
-    <script type="text/javascript" src="/vendors/angular/angular.min.js"></script>
-    <script type="text/javascript" src="/vendors/angular-animate/angular-animate.min.js"></script>
-    <script type="text/javascript" src="/vendors/angular-messages/angular-messages.min.js"></script>
-    <script type="text/javascript" src="/vendors/angular-aria/angular-aria.min.js"></script>
 
-    <script type="text/javascript" src="/vendors/angular-material/angular-material.min.js"></script>
-    <script type="text/javascript" src="/assets/scripts/app.min.js"></script>
+
 
     </body>
 </html>
